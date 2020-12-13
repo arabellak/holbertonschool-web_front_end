@@ -175,7 +175,7 @@ a:active {
 
 /* ul */
 
-ul .row {
+ul.row {
     margin: 0;
     padding: 0;
     list-style: none;
