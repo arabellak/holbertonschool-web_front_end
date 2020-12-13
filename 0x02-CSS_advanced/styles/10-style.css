@@ -60,7 +60,7 @@ a {
 /* Section */
 
 .section-header {
-    margin: var(--section-header-align);
+    left: var(--section-header-align);
 }
 
 .section-tagline {
