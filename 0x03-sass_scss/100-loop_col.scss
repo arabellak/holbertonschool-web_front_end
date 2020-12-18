@@ -1,10 +1,9 @@
 /* Loop Headers */
 
-$width_value: 100% 50% 33.3333333333% 25%;
+$width_value: 100%, 50%, 33.3333333333%, 25%;
 
-@each $class in $width_value {
-    $col: index($width_value, $class);
-    .col-#{$col} {
-        width: #{$class};
+@for $value from 1 through length($width_value) {
+    .col-#{$value} {
+        width: nth($width_value, $value);
     }
 }
