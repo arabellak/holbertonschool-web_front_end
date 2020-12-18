@@ -1,0 +1,12 @@
+/* Loop Headers */
+
+$col: col- !default;
+$width_value: 100%, 50%, 33.3333333333%, 25%;
+
+@for $class from 1 through 4 {
+    #{$col}#{$class} {
+        @each $value in $width_value {
+            width: #{$class};
+        }
+    }
+}
