@@ -9,3 +9,7 @@ function welcomeMessage(fullName){
 let guillaume = welcomeMessage('Guillaume');
 let alex = welcomeMessage('Alex');
 let fred = welcomeMessage('Fred');
+
+guillaume();
+alex();
+fred();
