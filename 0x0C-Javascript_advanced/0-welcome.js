@@ -6,3 +6,5 @@ function welcome (firstName, lastName) {
     }
     displayFullName();
 }
+
+welcome('Holberton', 'School');
