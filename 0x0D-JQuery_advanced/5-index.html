@@ -15,9 +15,9 @@
       function addNewMember(firstName, lastName){
         let x = $('<td>(x)</td>').css('background', 'orange');
         $(x).click(function(){
-          $('td').remove();
+          $('tr').remove();
         });
-        
+
         $('tbody').append('<tr></tr>');
         $('tr').last().append('<td>' + firstName + '</td>', '<td>' + lastName + '</td>', x);
 
