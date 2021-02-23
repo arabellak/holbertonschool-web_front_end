@@ -9,10 +9,9 @@ function queryWikipedia(callback) {
     let req = new XMLHttpRequest();
     req.open('GET', 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Stack%20Overflow&origin=*');
     req.onload = function () {
-        let content = JSON.parse(this.response);
-
         if (req.status >= 200 && req.status < 400) {
-            content.forEach((query) => {
+            let c = JSON.parse(this.response);
+            c.forEach((query) => {
                 
             });
         }
