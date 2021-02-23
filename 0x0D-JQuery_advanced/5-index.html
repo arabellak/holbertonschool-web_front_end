@@ -13,8 +13,12 @@
       };
 
       function addNewMember(firstName, lastName){
+        let x = $('<td>(x)</td>').css('background', 'orange');
         $('tbody').append('<tr></tr>');
-        $('tr').last().append('<td>' + firstName + '</td>' + '<td>' + lastName + '</td>' + '<td>' + '(x)' + '</td>');
+        $('tr').last().append('<td>' + firstName + '</td>', '<td>' + lastName + '</td>', x);
+        $(x).click(function(){
+          $('tr').remove();
+        });
       };
 
       createFamilyTree();
