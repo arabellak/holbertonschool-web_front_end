@@ -11,7 +11,7 @@
         $('body').append('<input type="text">');
         $('body').append('<input id="sub" type="submit">');
         $('#sub').click(function(){
-
+          queryWikipedia(input);
         });
         $('body').append('<ul></ul>');
       };
@@ -39,10 +39,8 @@
         Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
 
         $.get(url, function(data){
-          data.query.search.forEach(trav =>{
-            addNewArticle(trav.pageid, trav.title, trav.snippet);
-          )}
-        })
+          data.query.search.forEach(trav =>{addNewArticle(trav.pageid, trav.title, trav.snippet);});
+        });
       };
 
       createSearchForm();
