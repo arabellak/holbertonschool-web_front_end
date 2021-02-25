@@ -8,22 +8,15 @@
   <body>
     <script type="application/javascript">
       function createSearchForm(){
-        $('body').append('<input type="text">');
-        $('body').append('<input id="sub" type="submit">');
-        $('#sub').click(function(){
-          queryWikipedia(input);
+        $('body').append('<input type="text">', '<input id="sub" type="submit">', '<ul></ul>');
+        $('input:last').click(function(){
+          let subValue = $('input:first').val();
+          queryWikipedia(subValue);
         });
-        $('body').append('<ul></ul>');
       };
 
       function addNewArticle (id, title, snippet){
-        $('ul').append('<li><li>');
-        $('li').append('<p><span class="sp"></span></p>');
-        $('.sp').first().append(id + '-' + '<b>title</b>');
-
-        $('li').append('<p></p>');
-        $('p').last().append(snippet);
-
+        $('ul').append(`<li><p><span>${id} - <b>${title}</b></span></p><p>${snippet}</p><li>`);
       };
 
       function queryWikipedia(search){
@@ -38,9 +31,13 @@
         url = url + "?origin=*";
         Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
 
-        $.get(url, function(data){
-          data.query.search.forEach(trav =>{addNewArticle(trav.pageid, trav.title, trav.snippet);});
-        });
+        fetch(url)
+          .then(function(response){return response.json();})
+          .then(function(response){response.query.search.forEach(function({pageid, title, snippet}){
+            addNewArticle(pageid, title, snippet)
+          })
+        })
+        .catch(function(error){console.log(error);});
       };
 
       createSearchForm();
