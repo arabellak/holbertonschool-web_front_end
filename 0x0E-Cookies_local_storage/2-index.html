@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+  </head>
+  <body>
+    <h1>Login to the website</h1>
+    <input id="firstname" placeholder="Firstname">
+    <input id="email" placeholder="Email">
+    <button onclick="setCookies()">Log me in</button>
+    <br>
+    <h1>Cookies</h1>
+    <button onclick="showCookies()">Show the cookies</button>
+    <!--Javascript-->
+    <script>
+      function setCookies(){
+        let name = document.getElementById('firstname').value;
+        document.cookie = `firstname=${name}; max-Age="864000"; path=/`;
+
+        let em = document.getElementById('email').value;
+        document.cookie = `email=${em}; max-Age="864000"; path=/`;       
+      }
+
+      function showCookies(){
+        let fn = getCookie('firstname');
+        let emai = getCookie('email');
+
+        let body = document.body;
+        let pg = document.createElement('p');
+        let text = document.createTextNode(`Email: ${emai} - Firstname: ${fn}`);
+        pg.appendChild(text);
+        body.appendChild(paragraph);
+      }
+
+      function getCookie(name){
+        let cookieN = name + "=";
+        let dCookie = decodeURIComponent(document.cookie);
+        let c = dCookie.split(';');
+        for(let i = 0; i < c.length; i++){
+          let j = c[i];
+          while(j.charAt(0) == ' '){
+            j = j.substring(1);
+          }
+          if(j.indexOf(cookieN) == 0){
+            return j.substring(cookieN.length, j.length);
+          }
+        }
+        return "";
+      }
+    </script>
+  </body>
+</html>
