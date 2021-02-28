@@ -1,64 +1,64 @@
 {
-    "posts": [
-      {
-        "id": 1,
-        "title": "json-server",
-        "author": "typicode"
-      },
-      {
-        "title": "fd",
-        "author": "fffff",
-        "id": 2
-      },
-      {
-        "title": "fd",
-        "author": "fffff",
-        "id": 3
-      },
-      {
-        "title": "f",
-        "author": "f",
-        "id": 4
-      },
-      {
-        "title": "",
-        "author": "",
-        "id": 5
-      },
-      {
-        "title": "",
-        "author": "",
-        "id": 6
-      },
-      {
-        "title": "",
-        "author": "",
-        "id": 7
-      },
-      {
-        "title": "",
-        "author": "",
-        "id": 8
-      },
-      {
-        "title": "",
-        "author": "",
-        "id": 9
-      },
-      {
-        "title": "",
-        "author": "",
-        "id": 10
-      }
-    ],
-    "comments": [
-      {
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-      }
-    ],
-    "profile": {
-      "name": "typicode"
+  "posts": [
+    {
+      "id": 1,
+      "title": "bad benito xlife",
+      "author": "JBalvin"
+    },
+    {
+      "title": "Me decido por ti",
+      "author": "te decides por ti",
+      "id": 2
+    },
+    {
+      "title": "son mas ",
+      "author": "de las doce",
+      "id": 3
+    },
+    {
+      "title": "hoy voy ",
+      "author": "a lo loco",
+      "id": 4
+    },
+    {
+      "title": "yo no me complico",
+      "author": "como te explico",
+      "id": 5
+    },
+    {
+      "title": "despues de las 12",
+      "author": "vamos por la party",
+      "id": 6
+    },
+    {
+      "title": "ya se puso",
+      "author": "buena la fiesta",
+      "id": 7
+    },
+    {
+      "title": "yo no se que",
+      "author": "me pasa",
+      "id": 8
+    },
+    {
+      "title": "nadie se",
+      "author": "compara",
+      "id": 9
+    },
+    {
+      "title": "bb no mires",
+      "author": "la hora",
+      "id": 10
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}
