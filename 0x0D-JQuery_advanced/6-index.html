@@ -32,10 +32,10 @@
 
         if (position == 'before'){
           /*Adds a top row*/
-          $('tbody').prepend('<tr></tr>');
+          $('tbody').prepend('<tr><td>' + firstName + '</td>', '<td>' + lastName + '</td>', '<td>'+ x +'</td></tr>');
         } else{
           /*Adds a bottom row*/
-          $('tbody').append('<tr></tr>');
+          $('tbody').append('<tr><td>' + firstName + '</td>', '<td>' + lastName + '</td>', '<td>'+ x +'</td></tr>');
         }
       };
 
@@ -45,9 +45,7 @@
         $('select').append('<option value="before">Before</option><option value="after">After</option>');
         $('select').after('<input id="sub" type="submit">');
 
-        $('#sub').click(function(){
-          addNewMember($('firstName').val() + $('lastName').val() + position);
-        });
+        $('sub').click(function() {addNewMember($('input:first').val(), $('input:nth-of-type(2)').val(), $('select').val())})
       };
 
       createFamilyTree();
