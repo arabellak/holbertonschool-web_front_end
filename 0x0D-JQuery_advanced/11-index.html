@@ -50,7 +50,7 @@
         let apiInfo = {author: $('#author').val(), title: $('#title').val()};
 
         $.post('http://localhost:3000/posts', apiInfo)
-        .done(function(response){addPostRow(response);})
+        .done(function(response){(response);})
         .fail(function(){alert('Error sending the POST query');})
       }
       
