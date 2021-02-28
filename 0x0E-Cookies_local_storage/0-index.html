@@ -8,18 +8,27 @@
     <h1>Login to the website</h1>
     <input id="firstname" placeholder="Firstname">
     <input id="email" placeholder="Email">
-    <button>Log me in</button>
+    <button onclick="setCookies()">Log me in</button>
     <br>
     <h1>Cookies</h1>
-    <button>Show the cookies</button>
+    <button onclick="showCookies()">Show the cookies</button>
     <!--Javascript-->
     <script>
-      function showCookies(){
-        
+      function setCookies(){
+        let name = document.getElementById('firstname').value;
+        document.cookie = `firstname=${name}`;
+
+        let em = document.getElementById('email').value;
+        document.cookie = `email=${em}`;
       }
 
       function showCookies(){
-        document.createElement('p');
+        let cookie = document.cookie;
+        let body = document.body;
+        let pg = document.createElement('p');
+        let t = document.createTextNode('Cookies:');
+        pg.appendChild(t);
+        body.appendChild(pg);
       }
     </script>
   </body>
