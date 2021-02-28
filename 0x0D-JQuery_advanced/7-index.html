@@ -19,27 +19,27 @@
         $('ul').append(`<li><p><span>${id} - <b>${title}</b></span></p><p>${snippet}</p><li>`);
       };
 
-      function queryWikipedia(search){
-        let url = 'https://en.wikipedia.org/w/api.php';
-        let p = {
-          action: 'query',
-          list: 'search',
-          srsearch: search,
-          format: 'json'
-        };
+      function queryWikipedia(search) {
+            let url = "https://en.wikipedia.org/w/api.php"
+            let params = {
+                action: "query",
+                list: "search",
+                srsearch: search,
+                format: "json"
+            }
+            url = url + "?origin=*"
+            Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
 
-        url = url + "?origin=*";
-        Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
-
-        fetch(url)
-          .then(function(response){return response.json();})
-          .then(function(response){response.query.search.forEach(function({pageid, title, snippet}){
-            addNewArticle(pageid, title, snippet)
-          })
-        })
-        .catch(function(error){console.log(error);});
-      };
-
+            fetch(url)
+            .then(function(response){return response.json();})
+            .then(function(response) {
+                response.query.search.forEach(function({ pageid, title, snippet }) {
+                    addNewArticle(pageid, title, snippet)
+                })
+            })
+            .catch(function(error){console.log(error);});
+        }
+      
       createSearchForm();
     </script>
   </body>
